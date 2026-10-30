@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6 类重复劳动 → 自动流水线 · 莫咏作品集</title>
+<meta name="description" content="把公司里每天、每周都要人工做一遍的活，拆成 SOP 交给 Agent 执行，人工验收才投产。">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="brand" href="../index.html"><span class="avatar">莫</span><span class="nm">莫咏</span></a>
+  <div class="nav-r">
+    <a href="../index.html#work">作品</a>
+    <a href="../index.html#how">方法</a>
+    <a href="../index.html#about">关于我</a>
+    <a href="../index.html#contact" class="btn">联系我 →</a>
+  </div>
+</nav>
+<div class="dhead">
+  <div class="crumb">项目 · 流程改造</div>
+  <h1>每天都要人工做一遍的活，我交给了 Agent</h1>
+  <p class="lead">公司里总有一些活：每天要读一遍、每周要抄一遍、每次都要手工做一遍。它们吃掉的不是难度，是人的注意力。我把这类活拆成 SOP、交给 Agent 跑、再人工验收。</p>
+  <div class="dnums"><span><b>6</b> 条流水线</span><span><b>32</b> 条/天 可用片</span><span><b>5</b> 路 Agent 并行</span><span><b>人工</b> 验收才投产</span></div>
+</div>
+<div class="dgrid">
+  <div>
+    <div class="dsec" style="margin-bottom:14px">
+      <h3>六条流水线，都是真在跑的</h3>
+      <ul>
+        <li><b>资料整理</b>：成堆的岗位和客户资料要人工归档打标 → 自动入库、自动打标、状态自动回写</li>
+        <li><b>资讯汇总</b>：每天要手工读一遍的几个来源 → 定时抓取 + AI 提炼成一张卡，推到手机</li>
+        <li><b>素材剪辑</b>：一批素材排队等人剪 → 音轨识别 + 画面评判，单日最高 32 条可用片</li>
+        <li><b>资料检索</b>：资料散在各处，问谁都要翻半天 → 入库切分 + 语义检索，答案带出处可回溯</li>
+        <li><b>内容生产</b>：直播和口播的复盘靠人记 → 逐字稿分析 + 话术蒸馏 + 混剪流水线</li>
+        <li><b>经验沉淀</b>：能带人的经验只在少数人脑子里 → 写成 Skill，新人直接调用</li>
+      </ul>
+    </div>
+    <div class="dsec" style="margin-bottom:14px">
+      <h3>每条流水线的细节</h3>
+      <ul>
+        <li><a class="more" href="asmr.html">素材剪辑：ASMR 自动剪辑方案 →</a></li>
+        <li><a class="more" href="rag.html">资料检索：知识库管线与语义检索 →</a></li>
+        <li><a class="more" href="dropcard.html">资讯汇总：每日自动汇总推送 →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <div class="dsec">
+      <h3>我的做法</h3>
+      <ul>
+        <li>先量：哪一步最吃人力，量化了再动手，不凭感觉</li>
+        <li>拆 SOP：写成别人能照做的步骤，AI 才跑得稳</li>
+        <li>跑：用 Claude Code 和 Codex 建 Skill 或工作流，按步骤执行而不是靠一次次的提示词</li>
+        <li>验：人工验收卡口，我判断的是能不能用，不是看起来对不对</li>
+      </ul>
+    </div>
+    <div class="dsec" style="margin-bottom:14px">
+      <h3>怎么保证它不出错</h3>
+      <ul>
+        <li>按「70-80% 可用即投产」控制工程投入，不追求全自动</li>
+        <li>发布、对外动作仍保留人工确认</li>
+        <li>每条流水线都能单独重跑，出问题不拖累别的</li>
+      </ul>
+    </div>
+    <div class="dsec" style="margin-bottom:14px">
+      <h3>这些流水线跑在哪</h3>
+      <p>全部跑在一套多会话 Agent 工作台上，飞书当消息桥。<a class="more" href="agent.html">看工作台怎么搭 →</a></p>
+    </div>
+  </div>
+</div>
+<a class="backlink" href="../index.html#work">← 回到全部作品</a>
+<div class="contact" style="margin-top:40px">
+  <div>
+    <h2>想聊聊？</h2>
+    <p>看岗位、发简历、或者只是想找个人聊聊 AI 怎么落进业务里，都欢迎找我。</p>
+    <div class="mail copy" id="mail">moyong06@foxmail.com</div>
+  </div>
+  <div class="acts">
+    <a class="btn" href="mailto:moyong06@foxmail.com">发邮件 →</a>
+    <a class="btn ghost" href="../index.html">回到首页</a>
+  </div>
+</div>
+<footer>
+  <span>莫咏 · 广州 · 可深圳</span>
+  <span>本站由 Claude Code + Codex 协助搭建 · 截图均为真实运行中的系统</span>
+</footer>
+</div>
+<script>
+  const nav=document.querySelector('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+  const mail=document.getElementById('mail');
+  if(mail){ mail.style.cursor='pointer';
+    mail.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('moyong06@foxmail.com');mail.classList.add('done');setTimeout(()=>mail.classList.remove('done'),1600);}catch(e){}});
+  }
+</script>
+</body>
+</html>
