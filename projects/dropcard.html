@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日自动汇总推送 · 莫咏作品集</title>
+<meta name="description" content="定时抓取、AI 提炼摘要、生成卡片推送到飞书，把每天要手工读一遍的动作变成自动到达。">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="brand" href="../index.html"><span class="avatar">莫</span><span class="nm">莫咏</span></a>
+  <div class="nav-r">
+    <a href="../index.html#work">作品</a>
+    <a href="../index.html#how">方法</a>
+    <a href="../index.html#about">关于我</a>
+    <a href="../index.html#contact" class="btn">联系我 →</a>
+  </div>
+</nav>
+<div class="dhead">
+  <div class="crumb">项目 · 定时流水线</div>
+  <h1>每天该看的东西，自动出现在手机屏幕上</h1>
+  <p class="lead">不想每天主动去翻信息，就让流程把它送到面前。定时任务触发、AI 负责提炼、卡片直接推进飞书私聊。</p>
+  <div class="dnums"><span><b>每日</b> 自动执行</span><span><b>AI</b> 提炼摘要</span><span><b>1 屏</b> 卡片读完</span><span><b>多源</b> 可复用</span></div>
+</div>
+<div class="dgrid">
+  <div><div class="dsec" style="margin-bottom:14px"><h3>它解决什么</h3><p>信息散在邮件、表格、群里，每天要花几十分钟拼凑「今天发生了什么」。</p></div><div class="dsec" style="margin-bottom:14px"><h3>怎么跑起来的</h3><ul><li>定时任务在固定时间点触发（每晚 21:50）</li><li>读多维表格 / 抓取数据源，拿到原始信息</li><li>AI 提炼出结论，按固定格式组织成一段说明</li><li>渲染成卡片图 + 文字，直接推到飞书</li><li>发送前做一次落地校验，确认真的送达</li></ul></div></div>
+  <div>
+    <div class="dsec">
+      <h3>我的做法</h3>
+      <ul><li>定义「每天要看什么」，把它变成一个可计算的规则</li><li>定时触发 + 数据拉取</li><li>AI 提炼，把数据变成结论</li><li>渲染推送，手机上直接读完</li></ul>
+    </div>
+    <div class="dsec" style="margin-bottom:14px"><h3>这张卡就是它自己</h3><p>上面那张掉落卡就是本系统的真实产出：它统计我的投递事件、算 EXP、算出距离下一级还差多少，然后自己发到我手机上。</p></div>
+  </div>
+</div>
+<a class="backlink" href="../index.html#work">← 回到全部作品</a>
+<div class="contact" style="margin-top:40px">
+  <div>
+    <h2>想聊聊？</h2>
+    <p>看岗位、发简历、或者只是想找个人聊聊 AI 怎么落进业务里，都欢迎找我。</p>
+    <div class="mail copy" id="mail">moyong06@foxmail.com</div>
+  </div>
+  <div class="acts">
+    <a class="btn" href="mailto:moyong06@foxmail.com">发邮件 →</a>
+    <a class="btn ghost" href="../index.html">回到首页</a>
+  </div>
+</div>
+<footer>
+  <span>莫咏 · 广州 · 可深圳</span>
+  <span>本站由 Claude Code + Codex 协助搭建 · 截图均为真实运行中的系统</span>
+</footer>
+</div>
+<script>
+  const nav=document.querySelector('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+  const mail=document.getElementById('mail');
+  if(mail){ mail.style.cursor='pointer';
+    mail.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('moyong06@foxmail.com');mail.classList.add('done');setTimeout(()=>mail.classList.remove('done'),1600);}catch(e){}});
+  }
+</script>
+</body>
+</html>

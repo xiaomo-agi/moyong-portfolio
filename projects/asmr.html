@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ASMR 自动剪辑方案 · 莫咏作品集</title>
+<meta name="description" content="音轨识别加画面评判的自动剪辑，把一批要几小时的人工剪辑压到快速出片。">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="brand" href="../index.html"><span class="avatar">莫</span><span class="nm">莫咏</span></a>
+  <div class="nav-r">
+    <a href="../index.html#work">作品</a>
+    <a href="../index.html#how">方法</a>
+    <a href="../index.html#about">关于我</a>
+    <a href="../index.html#contact" class="btn">联系我 →</a>
+  </div>
+</nav>
+<div class="dhead">
+  <div class="crumb">项目 · 出海品牌</div>
+  <h1>一小时起步的活，压到能当天出片</h1>
+  <p class="lead">不是所有内容都值得精修。判断「这类内容需要多精细」，然后只在该花的地方花工程力。</p>
+  <div class="dnums"><span><b>32</b> 条/日 剪辑量</span><span><b>70-80%</b> 可用即投产</span><span><b>几小时→</b> 快速出片</span><span><b>发布</b> 仍人工</span></div>
+</div>
+<div class="dgrid">
+  <div><div class="dsec" style="margin-bottom:14px"><h3>它解决什么</h3><p>自己拍的沉浸式 ASMR 视频，人工剪一条要几分钟，一批要几个小时。拍摄和剪辑都卡在同一条流水线上。</p></div><div class="dsec" style="margin-bottom:14px"><h3>怎么跑起来的</h3><ul><li>音轨识别定位段落，画面评判辅助取舍</li><li>自动生成剪辑方案，产出直接可用</li><li>关键判断：ASMR 不需要精剪，所以做到 70-80% 可用就投产</li><li>把工程力留给高价值环节，而不是追求 100% 自动化</li></ul></div></div>
+  <div>
+    <div class="dsec">
+      <h3>我的做法</h3>
+      <ul><li>先判断这类内容值不值得精修</li><li>找到能自动化的环节，不追求全自动</li><li>设定可用阈值，到线就投产</li><li>把人工留在真正需要判断的地方</li></ul>
+    </div>
+    <div class="dsec" style="margin-bottom:14px"><h3>诚实的边界</h3><p>「32 条」是<b>剪辑量</b>，不是拍摄量也不是发布量——实际一周发布最多十几条。发布环节始终人工，没有做成自动化。</p></div>
+  </div>
+</div>
+<a class="backlink" href="../index.html#work">← 回到全部作品</a>
+<div class="contact" style="margin-top:40px">
+  <div>
+    <h2>想聊聊？</h2>
+    <p>看岗位、发简历、或者只是想找个人聊聊 AI 怎么落进业务里，都欢迎找我。</p>
+    <div class="mail copy" id="mail">moyong06@foxmail.com</div>
+  </div>
+  <div class="acts">
+    <a class="btn" href="mailto:moyong06@foxmail.com">发邮件 →</a>
+    <a class="btn ghost" href="../index.html">回到首页</a>
+  </div>
+</div>
+<footer>
+  <span>莫咏 · 广州 · 可深圳</span>
+  <span>本站由 Claude Code + Codex 协助搭建 · 截图均为真实运行中的系统</span>
+</footer>
+</div>
+<script>
+  const nav=document.querySelector('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+  const mail=document.getElementById('mail');
+  if(mail){ mail.style.cursor='pointer';
+    mail.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('moyong06@foxmail.com');mail.classList.add('done');setTimeout(()=>mail.classList.remove('done'),1600);}catch(e){}});
+  }
+</script>
+</body>
+</html>

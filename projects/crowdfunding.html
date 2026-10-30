@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>两个百万美金级众筹项目 · 莫咏作品集</title>
+<meta name="description" content="独立负责多个海外众筹项目营销端全流程，从页面文案到上线转化，累计筹款超 $3M。">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="brand" href="../index.html"><span class="avatar">莫</span><span class="nm">莫咏</span></a>
+  <div class="nav-r">
+    <a href="../index.html#work">作品</a>
+    <a href="../index.html#how">方法</a>
+    <a href="../index.html#about">关于我</a>
+    <a href="../index.html#contact" class="btn">联系我 →</a>
+  </div>
+</nav>
+<div class="dhead">
+  <div class="crumb">项目 · 出海营销</div>
+  <h1>把一个想法变成 $3M+ 的真实成交</h1>
+  <p class="lead">接手时只有一个产品文案和一个空页面。之后是预热、页面、邮件、社群、预算——一条完整链路。</p>
+  <div class="dnums"><span><b>$3M+</b> 累计筹款</span><span><b>30 天</b> 单项目周期</span><span><b>$1.27M+</b> 单项目</span><span><b>3000+</b> 支持者</span></div>
+</div>
+<div class="dgrid">
+  <div><div class="dsec" style="margin-bottom:14px"><h3>它解决什么</h3><p>众筹不是投广告，是在一个 30 天的窗口里，把一个没人知道的东西讲到有人愿意掏钱。</p></div><div class="dsec" style="margin-bottom:14px"><h3>怎么跑起来的</h3><ul><li>预热期做 landing page，收集上万人邮箱订阅与预定意向</li><li>用转化数据反哺：哪条广告带来预定、哪个卖点转化更好，就加预算、往前排</li><li>Kickstarter 页面从零写与迭代（接手时只有产品文案）</li><li>邮件营销 8-9 轮 campaign，打开率约 40-50%（同期众筹品牌约 20-30%）</li><li>Facebook 社群 2000+ 成员运营，含测评互动</li><li>与客户议价敲定回报档位结构，平衡转化与利润</li></ul></div></div>
+  <div>
+    <div class="dsec">
+      <h3>我的做法</h3>
+      <ul><li>预热先收意向，再用数据反推内容和预算</li><li>页面是转化主战场，文案按卖点重写</li><li>邮件与社群负责把热度养到上线</li><li>档位定价要跟客户 battle 一次</li></ul>
+    </div>
+    <div class="dsec" style="margin-bottom:14px"><h3>独立负责 vs 主导全场</h3><p>我做的是<b>营销端全案</b>（页面、邮件、社群、数据），工厂、物流、视觉有专人。写简历时我留了这个边界——不写「主导整个项目」。</p></div>
+  </div>
+</div>
+<a class="backlink" href="../index.html#work">← 回到全部作品</a>
+<div class="contact" style="margin-top:40px">
+  <div>
+    <h2>想聊聊？</h2>
+    <p>看岗位、发简历、或者只是想找个人聊聊 AI 怎么落进业务里，都欢迎找我。</p>
+    <div class="mail copy" id="mail">moyong06@foxmail.com</div>
+  </div>
+  <div class="acts">
+    <a class="btn" href="mailto:moyong06@foxmail.com">发邮件 →</a>
+    <a class="btn ghost" href="../index.html">回到首页</a>
+  </div>
+</div>
+<footer>
+  <span>莫咏 · 广州 · 可深圳</span>
+  <span>本站由 Claude Code + Codex 协助搭建 · 截图均为真实运行中的系统</span>
+</footer>
+</div>
+<script>
+  const nav=document.querySelector('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+  const mail=document.getElementById('mail');
+  if(mail){ mail.style.cursor='pointer';
+    mail.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('moyong06@foxmail.com');mail.classList.add('done');setTimeout(()=>mail.classList.remove('done'),1600);}catch(e){}});
+  }
+</script>
+</body>
+</html>

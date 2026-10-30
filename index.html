@@ -4,149 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>莫咏 · 作品</title>
-<style>
-  :root{
-    --bg:#f7f7f5; --card:#fff; --ink:#1f2328; --ink2:#55606b; --ink3:#7d8791;
-    --line:#e2dfd9; --accent:#9c4530; --accent-soft:#f7ece8;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 26px 90px}
-
-  nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0 22px;position:sticky;top:0;background:rgba(247,247,245,.93);backdrop-filter:blur(8px);z-index:9;border-bottom:1px solid transparent}
-  nav.scrolled{border-bottom-color:var(--line)}
-  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
-  .avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(140deg,#2b2b2b,#6b5a4e);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600}
-  .brand .nm{font-size:17px;font-weight:600;letter-spacing:.06em}
-  .nav-r{display:flex;align-items:center;gap:28px}
-  .nav-r a{color:var(--ink2);text-decoration:none;font-size:14.5px;transition:color .15s}
-  .nav-r a:hover{color:var(--ink)}
-  .nav-r a.on{color:var(--ink);font-weight:500}
-  .btn{display:inline-block;background:var(--accent);color:#fff!important;text-decoration:none;padding:9px 18px;border-radius:7px;font-size:14px;font-weight:600;transition:filter .15s;box-shadow:0 1px 2px rgba(0,0,0,.12)}
-  .btn:hover{filter:brightness(1.08)}
-  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
-
-  .hero{padding:56px 0 44px}
-  .hero .kicker{font-size:12.5px;letter-spacing:.16em;color:var(--accent);text-transform:uppercase;font-weight:600;margin-bottom:16px}
-  .hero h1{font-size:46px;line-height:1.22;font-weight:700;letter-spacing:-.02em;max-width:760px}
-  .hero h1 em{font-style:normal;color:var(--accent)}
-  .hero p{font-size:17px;color:var(--ink2);max-width:660px;margin-top:20px}
-  .facts{display:flex;flex-wrap:wrap;gap:34px;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
-  .fact .n{font-size:27px;font-weight:700;letter-spacing:-.02em}
-  .fact .n small{font-size:15px;font-weight:600;color:var(--ink2)}
-  .fact .l{font-size:13px;color:var(--ink3);margin-top:1px}
-
-  section{padding-top:62px}
-  .sec-h{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:26px}
-  .sec-h h2{font-size:26px;font-weight:700;letter-spacing:-.01em}
-  .sec-h .en{font-size:12px;letter-spacing:.14em;color:var(--ink3);text-transform:uppercase}
-
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  @media(max-width:860px){.grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:600px){.grid{grid-template-columns:1fr}.hero h1{font-size:33px}}
-
-  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .18s,transform .18s}
-  .card:hover{border-color:#d6d2ca;transform:translateY(-2px)}
-  .card .shot{aspect-ratio:16/10;background:#fbfbfa;border-bottom:1px solid var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center}
-  .card .shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
-  .card .shot .ico{font-size:46px;opacity:.62;background:linear-gradient(160deg,#fbf7f4,#f3efe9);width:100%;height:100%;display:flex;align-items:center;justify-content:center}
-  .card .shot .icowrap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:linear-gradient(160deg,#fbf7f4,#f2eee8)}
-  .card .shot .icohint{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;color:#a2958c;letter-spacing:.06em}
-  /* 无截图卡片的规格面板：看起来像有意设计，不像缺图 */
-  .spec{width:100%;height:100%;padding:16px 18px;display:flex;flex-direction:column;justify-content:center;gap:7px;background:linear-gradient(160deg,#fbf8f5,#f4f0ea)}
-  .spec .sh{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10.5px;letter-spacing:.14em;color:#a2958c;text-transform:uppercase;margin-bottom:2px}
-  .spec .sl{display:flex;align-items:center;gap:9px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:#4a545e}
-  .spec .sl i{width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:.75;flex:none}
-  .spec .sl b{font-weight:600;color:#252b31}
-  .spec .foot{margin-top:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#a2958c}
-  .spec.big{padding:26px 28px;gap:9px}
-  .spec.big .sh{font-size:11.5px;margin-bottom:4px}
-  .spec.big .sl{font-size:14px}
-  .spec.big .foot{margin-top:10px;font-size:11.5px}
-  .card .body{padding:18px 19px 19px;display:flex;flex-direction:column;flex:1}
-  .card .role{font-size:12px;color:var(--accent);font-weight:600;letter-spacing:.04em}
-  .card h3{font-size:17px;font-weight:650;margin:5px 0 7px;letter-spacing:-.01em}
-  .card p{font-size:13.8px;color:var(--ink2);flex:1}
-  .card .more{margin-top:14px;font-size:13.5px;color:var(--accent);font-weight:500}
-  .card .more::after{content:" →"}
-
-  .feat{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr}
-  @media(max-width:860px){.feat{grid-template-columns:1fr}}
-  .feat .l{padding:30px 32px}
-  .feat .l h3{font-size:23px;font-weight:700;letter-spacing:-.015em;margin:8px 0 12px}
-  .feat .l p{color:var(--ink2);font-size:15px}
-  .feat .l ul{list-style:none;margin:16px 0 0}
-  .feat .l li{position:relative;padding-left:16px;margin-bottom:7px;font-size:14.2px;color:var(--ink2)}
-  .feat .l li::before{content:"";position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
-  .feat .r{background:#fbfbfa;border-left:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:18px}
-  @media(max-width:860px){.feat .r{border-left:0;border-top:1px solid var(--line)}}
-  .feat .r img{max-width:100%;max-height:330px;border-radius:8px;border:1px solid var(--line);object-fit:contain;background:#fff}
-
-  .about{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start}
-  @media(max-width:860px){.about{grid-template-columns:1fr;gap:26px}}
-  .about p{color:var(--ink2);margin-bottom:15px;font-size:15.2px}
-  .about p b{color:var(--ink);font-weight:600}
-  .tl{list-style:none}
-  .tl li{border-left:2px solid var(--line);padding:0 0 18px 18px;position:relative;margin-left:4px}
-  .tl li:last-child{padding-bottom:0}
-  .tl li::before{content:"";position:absolute;left:-5px;top:7px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
-  .tl .t{font-size:13px;color:var(--ink3)}
-  .tl .w{font-weight:650;font-size:15.5px;margin:2px 0 3px}
-  .tl .d{font-size:13.6px;color:var(--ink2)}
-
-  .contact{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:38px 36px;display:flex;justify-content:space-between;align-items:center;gap:26px;flex-wrap:wrap;margin-top:66px}
-  .contact h2{font-size:26px;font-weight:700;letter-spacing:-.01em}
-  .contact p{color:var(--ink2);margin-top:8px;font-size:15px;max-width:520px}
-  .contact .acts{display:flex;gap:10px;flex-wrap:wrap}
-  .contact .mail{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;color:var(--ink2);margin-top:14px}
-
-  footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-
-  /* ===== 轻量动效：原生 CSS 滚动驱动动画（零 JS、零依赖）=====
-     原理：animation-timeline: view() 让动画由「元素进入视口的进度」驱动，而不是时间。
-     浏览器支持：Chrome/Edge 115+、Safari 26+；Firefox 回退为静态。
-     无障碍：全部包在 prefers-reduced-motion: no-preference 里，尊重系统设置。 */
-  @media (prefers-reduced-motion: no-preference){
-    /* 入场：hero 依次浮起 */
-    @keyframes rise-in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-    .hero .kicker{animation:rise-in .7s cubic-bezier(.22,.8,.28,1) both}
-    .hero h1{animation:rise-in .8s cubic-bezier(.22,.8,.28,1) .06s both}
-    .hero p{animation:rise-in .8s cubic-bezier(.22,.8,.28,1) .14s both}
-    .facts{animation:rise-in .8s cubic-bezier(.22,.8,.28,1) .22s both}
-
-    /* 滚动进入视口时浮现（原生 scroll-driven） */
-    @supports (animation-timeline: view()) and (animation-range: 0% 100%){
-      @keyframes scroll-rise{from{opacity:.25;transform:translateY(30px)}to{opacity:1;transform:none}}
-      section .sec-h, .feat, .grid .card, .about > *, .contact{
-        animation:scroll-rise linear both;
-        animation-timeline:view();
-        animation-range:entry 4% cover 26%;
-      }
-      /* 同排卡片错峰：靠 animation-range 往后挪，而不是改 keyframes */
-      .grid .card:nth-child(2){animation-range:entry 10% cover 32%}
-      .grid .card:nth-child(3){animation-range:entry 16% cover 38%}
-      .grid .card:nth-child(4){animation-range:entry 10% cover 32%}
-      .grid .card:nth-child(5){animation-range:entry 16% cover 38%}
-      .grid .card:nth-child(6){animation-range:entry 22% cover 44%}
-      /* 首屏大卡里的图片轻微视差（只动 transform，合成器友好） */
-      .feat .r img,.feat .r .spec{animation:drift linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
-      @keyframes drift{from{transform:translateY(-14px)}to{transform:translateY(14px)}}
-    }
-    /* 不支持 scroll-driven 时的兜底：一次性入场，仍然优雅 */
-    @supports not ((animation-timeline: view()) and (animation-range: 0% 100%)){
-      @keyframes fade-in{from{opacity:0}to{opacity:1}}
-      section .sec-h,.feat,.grid .card,.about > *,.contact{animation:fade-in .6s ease both}
-    }
-  }
-  /* 悬停反馈：卡片浮起 + 图片微缩 */
-  .card .shot img{transition:transform .45s cubic-bezier(.22,.8,.28,1)}
-  .card:hover .shot img{transform:scale(1.025)}
-  .card:hover{border-color:#d3cec5}
-  /* 邮箱一键复制 */
-  .copy{position:relative;transition:color .15s}
-  .copy:hover{color:var(--accent)}
-  .copy.done::after{content:"已复制 ✓";position:absolute;left:0;top:0;font-size:13px;color:var(--accent)}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
@@ -164,7 +22,7 @@
 <div class="hero" id="top">
   <div class="kicker">AI Workflow · Portfolio</div>
   <h1>我把业务流程<br>做成<em>能跑的系统</em></h1>
-  <p>出海运营出身，2 年 8 个月跑通「用户调研 → 众筹 → 社媒矩阵 → AI 流程优化」。现在用 Claude Code 和 Codex 把重复流程拆成 SOP、交给 Agent 执行、再人工验收——下面这些全部真实投产在用。</p>
+  <p>出海运营出身，2 年 8 个月跑通「用户调研 → 众筹 → 社媒矩阵 → AI 流程优化」。现在用 Claude Code 和 Codex 把重复流程拆成 SOP、交给 <span class="nw">Agent 执行</span>、再人工验收——下面这些全部真实投产在用。</p>
   <div class="facts">
     <div class="fact"><div class="n">40<small> 亿+</small></div><div class="l">个人月 token 用量</div></div>
     <div class="fact"><div class="n">$<small>3</small>M+</div><div class="l">两个百万美金级众筹项目</div></div>
@@ -187,6 +45,7 @@
         <li>按匹配度、地点、薪资分档决定先投谁</li>
         <li>投递按简历标准计 EXP，配合每日掉落卡做进度结算</li>
       </ul>
+      <a class="more" href="projects/tracker.html">看系统详情 →</a>
     </div>
     <div class="r"><div class="spec big">
       <div class="sh">feishu base · 双表联动</div>
@@ -206,7 +65,7 @@
         <div class="role">定时流水线</div>
         <h3>每日自动汇总推送</h3>
         <p>定时抓取 → AI 提炼摘要 → 生成卡片推到飞书。把「每天要手工读一遍」的动作，变成手机上一张自动到达的卡。</p>
-        <div class="more">了解流水线</div>
+        <a class="more" href="projects/dropcard.html">了解流水线 →</a>
       </div>
     </div>
     <div class="card">
@@ -221,7 +80,7 @@
         <div class="role">个人项目</div>
         <h3>人生 Online 结算面板</h3>
         <p>把 218 天生活记录结算成多维属性。失败也计经验，是叠加态不是排行榜——这是它最核心的设计。</p>
-        <div class="more">看面板</div>
+        <a class="more" href="projects/life.html">看面板 →</a>
       </div>
     </div>
     <div class="card">
@@ -236,7 +95,7 @@
         <div class="role">Agent 编排</div>
         <h3>多 Agent 并行工作台</h3>
         <p>5 条独立 Agent 会话通道接进一个工作台，飞书做消息桥，手机上随时发起任务、看进度、批结果。目前整套跑在飞书里，没有独立产品。</p>
-        <div class="more">了解工作台</div>
+        <a class="more" href="projects/agent.html">了解工作台 →</a>
       </div>
     </div>
     <div class="card">
@@ -251,7 +110,7 @@
         <div class="role">RAG</div>
         <h3>知识库管线与语义检索</h3>
         <p>电子书批量转换入库，切分结构化，检索命中可回溯引用出处。答「这段讲了什么」这种问题也答得出来。</p>
-        <div class="more">了解管线</div>
+        <a class="more" href="projects/rag.html">了解管线 →</a>
       </div>
     </div>
     <div class="card">
@@ -266,7 +125,7 @@
         <div class="role">出海 · 智能硬件品牌</div>
         <h3>ASMR 自动剪辑方案</h3>
         <p>音轨识别加画面评判，把一批要几小时的人工剪辑压到快速出片。按「70-80% 可用即投产」控制工程投入。</p>
-        <div class="more">了解方案</div>
+        <a class="more" href="projects/asmr.html">了解方案 →</a>
       </div>
     </div>
     <div class="card">
@@ -275,7 +134,7 @@
         <div class="role">简历</div>
         <h3>一页简历</h3>
         <p>A4 一页，核心优势、教育、经历、技能。写简历只写真做过的那部分，主张和边界都留在纸上。</p>
-        <div class="more">看简历</div>
+        <a class="more" href="img/resume.png" target="_blank">看简历 →</a>
       </div>
     </div>
   </div>
@@ -310,7 +169,7 @@
     </div>
     <ul class="tl">
       <li><div class="t">2025.07 – 2026.08</div><div class="w">计客 · 智能硬件出海品牌</div><div class="d">海外社媒运营 → AI 流程优化（公司主动转岗）</div></li>
-      <li><div class="t">2024.03 – 2025.06</div><div class="w">凯吉特 · 跨境营销</div><div class="d">海外市场营销 · Kickstarter 众筹</div></li>
+      <li><div class="t">2024.03 – 2025.06</div><div class="w">凯吉特 · 跨境营销</div><div class="d">海外市场营销 · Kickstarter 众筹</div><a class="more" href="projects/crowdfunding.html" style="font-size:13px">看两个百万美金项目 →</a></li>
       <li><div class="t">2023.07 – 2023.10</div><div class="w">唛壳科技 · 跨境电商</div><div class="d">亚马逊运营</div></li>
       <li><div class="t">2019 – 2023</div><div class="w">华南理工大学 · 数学学院</div><div class="d">校级二等奖学金</div></li>
     </ul>

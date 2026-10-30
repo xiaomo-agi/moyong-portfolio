@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>求职追踪与投递管理系统 · 莫咏作品集</title>
+<meta name="description" content="从岗位入库到投递、跟进、复盘归档，一套多维表格跑完整条求职流程。">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="brand" href="../index.html"><span class="avatar">莫</span><span class="nm">莫咏</span></a>
+  <div class="nav-r">
+    <a href="../index.html#work">作品</a>
+    <a href="../index.html#how">方法</a>
+    <a href="../index.html#about">关于我</a>
+    <a href="../index.html#contact" class="btn">联系我 →</a>
+  </div>
+</nav>
+<div class="dhead">
+  <div class="crumb">项目 · 求职系统</div>
+  <h1>我正在用它找工作的一套系统</h1>
+  <p class="lead">岗位库、投递日志、状态回写、跟进节奏、复盘归档，全部在一张飞书多维表格里跑。投递出去的那一秒，状态自己就更新了。</p>
+  <div class="dnums"><span><b>50+</b> 岗位入库</span><span><b>2</b> 张表联动</span><span><b>7</b> 天投出</span><span><b>100%</b> API 读写</span></div>
+</div>
+<div class="dgrid">
+  <div><div class="dsec" style="margin-bottom:14px"><h3>它解决什么</h3><p>收藏夹里的岗位越存越多，投递记录只在本子上，状态全靠脑子记。投完就忘、忘了就漏、漏了就错投。</p></div><div class="dsec" style="margin-bottom:14px"><h3>怎么跑起来的</h3><p>两张表：一张岗位追踪表（公司、岗位、薪资、匹配度、状态），一张投递日志表（日期、公司、岗位、事件、详情、结论），用 API 打通。</p><ul><li>投递 / HR 回复 / 约面 / 一面 / 二面 / Offer / 拒绝 / 跟进 八种事件流</li><li>关闭的岗位自动标出，不再浪费投递机会</li><li>按匹配度、地点、薪资三重分档，决定先投谁</li><li>投递按简历标准计 EXP，每晚生成一次结算卡</li><li>零手工同步：不维护第二份台账</li></ul></div></div>
+  <div>
+    <div class="dsec">
+      <h3>我的做法</h3>
+      <ul><li>梳理流程：把「投了什么」拆成可记录的事件字段</li><li>用 lark-cli 全 API 读写，不手工填表</li><li>状态回写：投递即更新，关闭自动标出</li><li>复盘口径固定：投递数、跟进节奏、EXP 结算</li></ul>
+    </div>
+    <div class="dsec" style="margin-bottom:14px"><h3>边界说明</h3><p>这系统里的每一条记录都是我的真实投递数据，属于私人求职信息。<b>所以公开版本不放任何记录截图</b>——只公开结构与机制。</p></div>
+  </div>
+</div>
+<a class="backlink" href="../index.html#work">← 回到全部作品</a>
+<div class="contact" style="margin-top:40px">
+  <div>
+    <h2>想聊聊？</h2>
+    <p>看岗位、发简历、或者只是想找个人聊聊 AI 怎么落进业务里，都欢迎找我。</p>
+    <div class="mail copy" id="mail">moyong06@foxmail.com</div>
+  </div>
+  <div class="acts">
+    <a class="btn" href="mailto:moyong06@foxmail.com">发邮件 →</a>
+    <a class="btn ghost" href="../index.html">回到首页</a>
+  </div>
+</div>
+<footer>
+  <span>莫咏 · 广州 · 可深圳</span>
+  <span>本站由 Claude Code + Codex 协助搭建 · 截图均为真实运行中的系统</span>
+</footer>
+</div>
+<script>
+  const nav=document.querySelector('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+  const mail=document.getElementById('mail');
+  if(mail){ mail.style.cursor='pointer';
+    mail.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('moyong06@foxmail.com');mail.classList.add('done');setTimeout(()=>mail.classList.remove('done'),1600);}catch(e){}});
+  }
+</script>
+</body>
+</html>
