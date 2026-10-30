@@ -22,12 +22,12 @@
 <div class="hero" id="top">
   <div class="kicker">AI Workflow · Portfolio</div>
   <h1>我把业务流程<br>做成<em>能跑的系统</em></h1>
-  <p>出海运营出身，2 年 8 个月跑通「用户调研 → 众筹 → 社媒矩阵 → AI 流程优化」。现在用 Claude Code 和 Codex 把重复流程拆成 SOP、交给 <span class="nw">Agent 执行</span>、再人工验收——下面这些全部真实投产在用。</p>
+  <p>出海运营出身，2 年 8 个月跑通「用户调研 → 众筹 → 社媒矩阵 → AI 流程优化」。现在用 <span class="nw">Claude Code 和 Codex</span> 把重复流程拆成 SOP、交给 <span class="nw">Agent 执行</span>、再人工验收——<span class="nw">下面的方案都已真正投入使用</span>。</p>
   <div class="facts">
-    <div class="fact"><div class="n">40<small> 亿+</small></div><div class="l">个人月 token 用量</div></div>
-    <div class="fact"><div class="n">$<small>3</small>M+</div><div class="l">两个百万美金级众筹项目</div></div>
-    <div class="fact"><div class="n">2<small> 年 </small>8<small> 个月</small></div><div class="l">出海全链路</div></div>
-    <div class="fact"><div class="n">985</div><div class="l">华南理工 · 信息与计算科学</div></div>
+    <div class="fact"><div class="n"><span class="cnt" data-to="40">40</span><small>亿+</small></div><div class="l">个人月度 Token 用量</div></div>
+    <div class="fact"><div class="n"><small class="cur">$</small><span class="cnt" data-to="3">3</span>M<small>+</small></div><div class="l">两个百万美元级项目 · 累计筹款</div></div>
+    <div class="fact"><div class="n"><span class="cnt" data-to="2">2</span><small class="gap">年</small><span class="cnt" data-to="8">8</span><small>个月</small></div><div class="l">出海全链路经验</div></div>
+    <div class="fact"><div class="n"><span class="cnt" data-to="985">985</span><small>高校</small></div><div class="l">华南理工 · 信息与计算科学</div></div>
   </div>
 </div>
 
@@ -163,7 +163,7 @@
   <div class="about">
     <div>
       <p>我是莫咏，华南理工大学信息与计算科学专业，985。<b>不写生产代码</b>——我的强项是把业务流程拆清楚、让 AI 跑起来、再判断产出能不能用。</p>
-      <p>过去两年在出海品牌做社媒运营和流程优化，用 AI 把批量剪辑、教程、招聘评估这些重复活变成能投产的流程；再往前是跨境营销，两个百万美金级众筹项目从头跟到尾。</p>
+      <p>过去两年在出海品牌做社媒运营和流程优化，用 AI 把批量剪辑、教程、招聘评估这些重复活变成能投产的流程；再往前是跨境营销，两个百万美元级项目 · 累计筹款从头跟到尾。</p>
       <p>我不太喜欢把话说满。简历上的动词我都留了边界——主导落地的项目我写「设计方案」，营销端独立负责的我才写「独立负责」。<b>只写我真做过的那部分。</b></p>
       <p>现在找的是 AI 产品运营、AI 应用与业务赋能、Agent 方向的产品岗。如果你的团队正在把 AI 真的塞进业务流程里，我大概能帮上点忙。</p>
     </div>
@@ -198,6 +198,34 @@
   const nav=document.querySelector('nav');
   addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
   // 邮箱点击复制
+  // 数字从 0 计数到目标值（原生 JS，无依赖）
+  (function(){
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const wait = ms => new Promise(r=>setTimeout(r,ms));
+    const easeOut = p => 1 - Math.pow(1-p, 3);
+    function countUp(el){
+      const to = parseFloat(el.dataset.to) || 0;
+      if(reduce){ el.textContent = to; return Promise.resolve(); }
+      const dur = 780 + Math.min(to, 50) * 9;
+      const t0 = performance.now();
+      return new Promise(res=>{
+        (function step(t){
+          const p = Math.min(1, (t-t0)/dur);
+          el.textContent = Math.round(to * easeOut(p));
+          if(p < 1) requestAnimationFrame(step);
+          else { el.textContent = to; el.classList.add('hit'); setTimeout(()=>el.classList.remove('hit'), 700); res(); }
+        })(t0);
+      });
+    }
+    document.querySelectorAll('.cnt').forEach(el=>{ el.textContent='0'; });
+    document.querySelectorAll('.fact').forEach((f, i)=>{
+      const els = [...f.querySelectorAll('.cnt')];
+      (async()=>{
+        await wait(i * 170);
+        for(const el of els){ await countUp(el); await wait(150); }
+      })();
+    });
+  })();
   const mail=document.getElementById('mail');
   if(mail){ mail.style.cursor='pointer'; mail.title='点击复制邮箱';
     mail.addEventListener('click',async()=>{

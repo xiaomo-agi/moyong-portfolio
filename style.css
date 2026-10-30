@@ -25,10 +25,18 @@
   .hero h1{font-size:46px;line-height:1.22;font-weight:700;letter-spacing:-.02em;max-width:760px}
   .hero h1 em{font-style:normal;color:var(--accent)}
   .hero p{font-size:17px;color:var(--ink2);max-width:660px;margin-top:20px}
-  .facts{display:flex;flex-wrap:wrap;gap:34px;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
-  .fact .n{font-size:27px;font-weight:700;letter-spacing:-.02em}
-  .fact .n small{font-size:15px;font-weight:600;color:var(--ink2)}
-  .fact .l{font-size:13px;color:var(--ink3);margin-top:1px}
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+  .fact .n{font-size:27px;font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:var(--ink)}
+  .fact .n small{font-size:.56em;font-weight:700;color:var(--ink2);letter-spacing:0;margin:0 .1em;vertical-align:.08em}
+  .fact .n small:first-child{margin-left:0}
+  .fact .n small:last-child{margin-right:0}
+  .fact .n .cur{margin-right:-.14em;letter-spacing:-.02em}
+  .fact .n .gap{margin-right:.34em}
+  .fact .n .cnt{display:inline-block;min-width:.5em;color:transparent;-webkit-text-fill-color:transparent;
+    background:linear-gradient(178deg,#151b21 22%,#56646f 100%);-webkit-background-clip:text;background-clip:text;
+    transition:transform .28s cubic-bezier(.2,.9,.3,1)}
+  .fact .n .cnt.hit{transform:translateY(-3px) scale(1.06);background:none;color:var(--accent);-webkit-text-fill-color:var(--accent)}
+  .fact .l{font-size:13px;color:var(--ink2);margin-top:5px;letter-spacing:.01em}
 
   section{padding-top:62px}
   .sec-h{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:26px}
@@ -102,7 +110,7 @@
      无障碍：全部包在 prefers-reduced-motion: no-preference 里，尊重系统设置。 */
   @media (prefers-reduced-motion: no-preference){
     /* 入场：hero 依次浮起 */
-    @keyframes rise-in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    @keyframes rise-in{from{transform:translateY(18px)}to{transform:none}}
     .hero .kicker{animation:rise-in .7s cubic-bezier(.22,.8,.28,1) both}
     .hero h1{animation:rise-in .8s cubic-bezier(.22,.8,.28,1) .06s both}
     .hero p{animation:rise-in .8s cubic-bezier(.22,.8,.28,1) .14s both}
@@ -110,7 +118,7 @@
 
     /* 滚动进入视口时浮现（原生 scroll-driven） */
     @supports (animation-timeline: view()) and (animation-range: 0% 100%){
-      @keyframes scroll-rise{from{opacity:.25;transform:translateY(30px)}to{opacity:1;transform:none}}
+      @keyframes scroll-rise{from{opacity:.6;transform:translateY(26px)}to{opacity:1;transform:none}}
       section .sec-h, .feat, .grid .card, .about > *, .contact{
         animation:scroll-rise linear both;
         animation-timeline:view();
