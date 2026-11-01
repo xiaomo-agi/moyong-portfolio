@@ -144,10 +144,11 @@
 </section>
 
 <div class="contact slim" id="contact">
-  <div class="ctitle"><h2>想聊聊？</h2><span class="mail copy" id="mail">moyong06@foxmail.com</span></div>
+  <div class="ctitle"><h2>想聊聊？</h2></div>
   <p>看岗位、发简历、或者只是想找个人聊聊 AI 怎么落进业务里，都欢迎找我。</p>
   <div class="acts">
     <a class="btn" href="mailto:moyong06@foxmail.com">发邮件 →</a>
+    <a class="btn ghost" href="#" onclick="showWx();return false">微信二维码</a>
     <a class="btn ghost" href="img/resume.png" target="_blank">看简历</a>
   </div>
 </div>
@@ -197,5 +198,12 @@
     });
   }
 </script>
+<div id="wxpop" style="position:fixed;inset:0;background:rgba(20,30,24,.62);display:none;z-index:99;align-items:center;justify-content:center;padding:20px" onclick="if(event.target===this)this.style.display='none'">
+<div style="background:#f7f4ea;border:3px solid #1f3d2b;border-radius:14px;padding:14px;max-width:340px;width:100%;text-align:center">
+<div style="font-size:13px;font-weight:700;color:#1f3d2b;margin-bottom:8px">微信扫码联系小 mo</div>
+<img src="img/wechat.png" style="width:100%;max-width:300px;aspect-ratio:1;object-fit:contain;border:1px solid #1f3d2b" alt="微信二维码">
+<div style="font-size:11px;color:#6b6b5a;margin-top:8px">点击空白处关闭</div>
+</div></div>
+<script>function showWx(){document.getElementById('wxpop').style.display='flex'}</script>
 </body>
 </html>
