@@ -7,17 +7,16 @@
 <meta name="description" content="十几个 Hermes Agent 各管一个领域：名字、领域、通道、解决什么；从需求到投产的 8 步搭建方法。">
 <link rel="stylesheet" href="../style.css">
 <style>
-  .tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:4px;border-radius:8px}
-  .atable{width:100%;min-width:560px;border-collapse:collapse;font-size:14px;margin-top:6px}
+  .atable{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
   .atable th{text-align:left;font-size:12px;letter-spacing:.08em;color:var(--ink3);text-transform:uppercase;font-weight:600;border-bottom:1px solid var(--line);padding:8px 10px}
   .atable td{border-bottom:1px solid var(--line);padding:9px 10px;color:var(--ink2);vertical-align:top}
   .atable td.nm{color:var(--ink);font-weight:600;white-space:nowrap}
   .atable td.ch{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;white-space:nowrap}
-  .steps2{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:10px;margin-top:6px}
+  .steps2{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:6px}
   .st2{background:#fafbfc;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
   .st2 .n{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--accent)}
   .st2 .t{font-size:14.5px;font-weight:600;color:var(--ink);margin:2px 0 4px}
-  .st2 .d{font-size:13px;color:var(--ink2);line-height:1.55;word-break:keep-all;overflow-wrap:break-word}
+  .st2 .d{font-size:13px;color:var(--ink2);line-height:1.5}
 </style>
 </head>
 <body>
@@ -36,27 +35,27 @@
   <div class="crumb">项目 · 工作方式</div>
   <h1>Agent 队伍清单：一支各有岗位说明书的队伍</h1>
   <p class="lead">每个 Agent 都有自己的一份岗位说明书——做什么、不做什么、输出什么格式、失败了怎么办。它们不共享上下文，各管一个领域；中间靠飞书当消息桥，人只需要在手机上发指令和批结果。</p>
-  <div class="dnums"><span><b>十几个</b> Hermes Agent</span><span><b>飞书</b> 消息桥</span><span><b>14</b> 份岗位说明书</span><span><b>0</b> 独立产品</span></div>
+  <div class="dnums"><span><b>十几个</b> 个 Hermes Agent</span><span><b>飞书</b> 消息桥</span><span><b>14</b> 份岗位说明书</span><span><b>0</b> 独立产品</span></div>
 </div>
 
 <section class="dsec" style="margin-top:26px">
   <h3>从需求到投产的 8 步（我自己的搭建方法）</h3>
   <div class="steps2">
     <div class="st2"><div class="n">STEP 1</div><div class="t">先量</div><div class="d">哪一步最吃人力，先量化再动手，不凭感觉。</div></div>
-    <div class="st2"><div class="n">STEP 2</div><div class="t">拆 SOP</div><div class="d">写成别人能照做的步骤，AI 才跑得稳。</div></div>
-    <div class="st2"><div class="n">STEP 3</div><div class="t">分上下文</div><div class="d">按领域拆会话，旧结论不污染新判断，产出可追溯。</div></div>
+    <div class="st2"><div class="n">STEP 2</div><div class="t">拆 SOP</div><div class="d">写成别人能照做的步骤——AI 才跑得稳。</div></div>
+    <div class="st2"><div class="n">STEP 3</div><div class="t">分上下文</div><div class="d">按领域拆会话：旧结论不污染新判断，产出可追溯。</div></div>
     <div class="st2"><div class="n">STEP 4</div><div class="t">写岗位说明书</div><div class="d">身份、职责、不做什么、输出格式、失败处理，逐条写清。</div></div>
     <div class="st2"><div class="n">STEP 5</div><div class="t">选桥接层</div><div class="d">选一个 IM 当桥接层，人和 Agent 用同一个界面说话。</div></div>
     <div class="st2"><div class="n">STEP 6</div><div class="t">配触发</div><div class="d">定时任务做自动触发，群聊做即时触发。</div></div>
-    <div class="st2"><div class="n">STEP 7</div><div class="t">人工验收</div><div class="d">验收卡口判断「能不能用」，不判断「看起来对不对」。</div></div>
+    <div class="st2"><div class="n">STEP 7</div><div class="t">人工验收</div><div class="d">验收卡口判断的是「能不能用」，不是「看起来对不对」。</div></div>
     <div class="st2"><div class="n">STEP 8</div><div class="t">沉淀 Skill</div><div class="d">能带人的经验写成 Skill，别人直接调用，不用重新教。</div></div>
   </div>
-  <div class="dnote">第 4 步是最值钱的一步。给每个 Agent 写岗位说明书，和企业里配置智能体（角色指令、记忆、能力、工作上下文、触发方式、权限边界）是同一套逻辑——只是我的载体是自己的飞书工作台。<br>现状说明：整套跑在飞书里，<b>没有做成独立产品</b>，这是内部工作方式，不是对外售卖的东西。</div>
+  <div class="dnote">第 4 步是最值钱的一步。给每个 Agent 写岗位说明书，和企业里配置智能体（角色指令、记忆、能力、工作上下文、触发方式、权限边界）是同一套逻辑——只是我的载体是自己的飞书工作台。<br>整套跑在飞书里，<b>没有做成独立产品</b>。</div>
 </section>
 
 <section class="dsec" style="margin-top:18px">
   <h3>队伍清单</h3>
-  <div class="tblwrap"><table class="atable">
+  <table class="atable">
     <thead><tr><th>Agent</th><th>领域</th><th>通道</th><th>它解决什么</th></tr></thead>
     <tbody>
       <tr><td class="nm">伯乐</td><td>求职</td><td class="ch">飞书</td><td>盯进度、催投递、陪面试；岗位入库与临期提醒</td></tr>
@@ -74,8 +73,7 @@
       <tr><td class="nm">爸爸的小助手</td><td>家庭</td><td class="ch">微信</td><td>给爸爸的助手：短句、不用术语、答错不嫌</td></tr>
       <tr><td class="nm">妈妈的小助手</td><td>家庭</td><td class="ch">微信</td><td>给妈妈的助手：讲菜谱、家常、生活百科</td></tr>
     </tbody>
-  </table></div>
-  <div class="dnote">数字口径：这里列的是 <b>14 个有岗位说明书的 Agent</b>（含给家里两位各配的一个），加上一套跑着 6 条流水线的<b>工作台</b>。所以对外我说「十几个」——数字不虚，细节可查。</div>
+  </table>
 </section>
 
 <a class="backlink" href="../index.html#work">← 回到全部作品</a>

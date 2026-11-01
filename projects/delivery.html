@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>一次完整的交付：把 14 个 Agent 用在我自己的生活上 · 莫咏作品集</title>
+<meta name="description" content="从模糊需求到可验收上线：需求澄清五步、岗位说明书、验收卡口、失败处理、反馈迭代——同一套交付动作，先在我自己身上跑通。">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .tl{list-style:none;margin-top:6px}
+  .tl li{position:relative;padding-left:26px;margin-bottom:12px;font-size:14.5px;color:var(--ink2);line-height:1.55}
+  .tl li::before{content:attr(data-n);position:absolute;left:0;top:0;width:19px;height:19px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .tl li b{color:var(--ink)}
+  .steps2{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-top:6px}
+  .st2{background:#fafbfc;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .st2 .n{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--accent)}
+  .st2 .t{font-size:14.5px;font-weight:600;color:var(--ink);margin:2px 0 4px}
+  .st2 .d{font-size:13px;color:var(--ink2);line-height:1.55}
+  .atable{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:6px}
+  .atable th{text-align:left;font-size:11.5px;letter-spacing:.08em;color:var(--ink3);text-transform:uppercase;font-weight:600;border-bottom:1px solid var(--line);padding:8px 10px}
+  .atable td{border-bottom:1px solid var(--line);padding:8px 10px;color:var(--ink2);vertical-align:top}
+  .atable td.nm{color:var(--ink);font-weight:600;white-space:nowrap}
+  .tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:4px}
+  .atable{min-width:520px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="brand" href="../index.html"><span class="avatar">莫</span><span class="nm">莫咏</span></a>
+  <div class="nav-r">
+    <a href="../index.html#work">作品</a>
+    <a href="../index.html#how">方法</a>
+    <a href="../index.html#about">关于我</a>
+    <a href="../index.html#contact" class="btn">联系我 →</a>
+  </div>
+</nav>
+
+<div class="dhead">
+  <div class="crumb">项目 · 交付方法</div>
+  <h1>一次完整的交付：把 14 个 Agent 用在我自己的生活上</h1>
+  <p class="lead">这不是「我用 AI 写了几条提示词」。这是一个真实场景从需求到上线的完整过程：先有痛点，再把痛点问成能交付的东西，然后拆、配、验收、迭代。我先在自己身上跑通了一遍。</p>
+  <div class="dnums"><span><b>14</b> 个 Agent</span><span><b>6</b> 条流水线</span><span><b>五步</b>需求澄清</span><span><b>人工</b>验收才投产</span></div>
+</div>
+
+<section class="dsec" style="margin-top:26px">
+  <h3>一、起点是一堆说不清的麻烦</h3>
+  <ul class="tl">
+    <li data-n="1"><b>钱散在各处</b>：每笔消费记在手机备忘录里，月底不知道花在哪，只能凭感觉。</li>
+    <li data-n="2"><b>时间被碎事吃掉</b>：一天下来回想不起干了什么，只觉得累。</li>
+    <li data-n="3"><b>读书读不下去</b>：买了不读、读了不留笔记、读完就忘。</li>
+    <li data-n="4"><b>素材到处散</b>：视频、音频、网页收藏在各自的地方，要用的时候翻半天。</li>
+    <li data-n="5"><b>英语学不进去</b>：想练但没人陪练，也没地方纠音。</li>
+    <li data-n="6"><b>情绪没出口</b>：难受的时候不想讲道理，也不想被教方法，只想有人接住。</li>
+    <li data-n="7"><b>情报靠刷</b>：想看的行业动态要一个个平台刷，刷完记不住。</li>
+  </ul>
+  <p style="margin-top:14px">每一条都不是「我要一个 AI 助手」这种需求——<b>它们是抱怨，不是需求</b>。抱怨没法交付，得先问成能交付的东西。</p>
+</section>
+
+<section class="dsec" style="margin-top:18px">
+  <h3>二、我怎么跟 AI 聊：五步需求澄清</h3>
+  <p style="color:var(--ink2);font-size:14.5px;margin-bottom:12px">跟 AI 聊最没用的开头是「帮我做个 XX」。能跑下去的开头是把这五件事先定死：</p>
+  <div class="steps2">
+    <div class="st2"><div class="n">STEP 1</div><div class="t">定对象</div><div class="d">给谁看、他看完要做什么决定？没人看的，先别做。</div></div>
+    <div class="st2"><div class="n">STEP 2</div><div class="t">定范围</div><div class="d">看什么、不看什么。先做信噪比高的那一部分。</div></div>
+    <div class="st2"><div class="n">STEP 3</div><div class="t">定频率</div><div class="d">一次性的还是周期性的、什么时候要。晚了会不会影响动作。</div></div>
+    <div class="st2"><div class="n">STEP 4</div><div class="t">定产出形态</div><div class="d">要文档、表格、卡片还是一条消息；要能回我追问。</div></div>
+    <div class="st2"><div class="n">STEP 5</div><div class="t">定验收标准</div><div class="d">做到什么程度算成功。做不成的话，怎么算它不值得继续。</div></div>
+  </div>
+  <p style="margin-top:12px;color:var(--ink2);font-size:14.5px">比如「记账」这件抱怨，最后收敛成的交付物是：<b>每笔随手发一句话就能记、月度自动出消费结构、日提醒 + 周月复盘；验收标准是「每天记账不超过 10 秒、月底不用回忆」。</b>不是「做个记账 App」。</p>
+</section>
+
+<section class="dsec" style="margin-top:18px">
+  <h3>三、拆：每个领域一份岗位说明书</h3>
+  <p style="color:var(--ink2);font-size:14.5px;margin-bottom:10px">拆完之后，每个 Agent 领一个领域，互不干扰。给它的说明书固定四项——<b>做什么、不做什么、输出什么格式、失败了怎么办</b>：</p>
+  <div class="tblwrap"><table class="atable">
+    <thead><tr><th>Agent</th><th>领域</th><th>说明书里写死的</th></tr></thead>
+    <tbody>
+      <tr><td class="nm">盘盘</td><td>金钱</td><td>每笔同时写本地账本和飞书流水表；日提醒、周月复盘</td></tr>
+      <tr><td class="nm">钟点工</td><td>时间</td><td>时间按流水记、每天复盘找时间黑洞</td></tr>
+      <tr><td class="nm">课代表</td><td>读书</td><td>每次从上次位置接上，先问进度；每 1-2 题思考题</td></tr>
+      <tr><td class="nm">Owen</td><td>英语</td><td>出题 → 语音转写 → 批改内容/逻辑/流利度；不假装能纠发音</td></tr>
+      <tr><td class="nm">树洞</td><td>情绪</td><td>只接住，不评判、不追问、不汇报</td></tr>
+      <tr><td class="nm">小库</td><td>素材</td><td>采集 → 转写 → 提纯，九条硬标准、失败重做判据</td></tr>
+      <tr><td class="nm">传送门</td><td>微信素材</td><td>微信侧统一入库与检索</td></tr>
+      <tr><td class="nm">管培生</td><td>内容</td><td>每天 3 张选题卡 + 初稿骨架，定稿权在我</td></tr>
+      <tr><td class="nm">生财雷达</td><td>情报</td><td>每天挑 2-3 条，每条带来源和一句点评</td></tr>
+      <tr><td class="nm">哨兵</td><td>会议记录</td><td>妙记采集 → 整理归档 → 可被检索</td></tr>
+      <tr><td class="nm">伯乐</td><td>求职</td><td>盯进度、催投递、岗位入库与临期提醒</td></tr>
+      <tr><td class="nm">老铁</td><td>运动</td><td>训练计划、汇报记录、每周复盘</td></tr>
+      <tr><td class="nm">爸爸的小助手</td><td>家庭</td><td>短句、不用术语、答错不嫌</td></tr>
+      <tr><td class="nm">妈妈的小助手</td><td>家庭</td><td>菜谱、家常、生活百科</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="dsec" style="margin-top:18px">
+  <h3>四、怎么保证它不出错</h3>
+  <ul class="tl">
+    <li data-n="1"><b>人工验收卡口</b>：我判断的是「能不能用」，不是「看起来对不对」。可用率达标就投产，不做过度打磨。</li>
+    <li data-n="2"><b>风险动作留人工</b>：对外发布、对外发消息这类动作，一律保留人工确认。</li>
+    <li data-n="3"><b>可单独重跑</b>：每条流水线能独立重跑，出问题不拖累别的。</li>
+    <li data-n="4"><b>失败有预案</b>：每份说明书里都写了失败时怎么办，所以出错时知道该退到哪一步，而不是重头再来。</li>
+  </ul>
+</section>
+
+<section class="dsec" style="margin-top:18px">
+  <h3>五、怎么让 AI 拿到我更想要的结果</h3>
+  <p style="color:var(--ink2);font-size:14.5px;margin-bottom:10px">第一次的结果基本都不是我要的。改的方式不是「再提示一次」，而是三步：</p>
+  <ul class="tl">
+    <li data-n="1"><b>把不满意说成具体的一句</b>：不说「不好看」，说「第 3 段太长、结论埋在中间、我要的是能直接抄的一句话」。</li>
+    <li data-n="2"><b>把这条反馈写回说明书</b>：下一次同类任务，规则已经变了——所以说明书会越用越准，而不是每次从零聊。</li>
+    <li data-n="3"><b>把标准量化</b>：能不能用、够不够快、有没有出处——没有验收标准，「更好」就只是感觉。</li>
+  </ul>
+</section>
+
+<section class="dsec" style="margin-top:18px">
+  <h3>六、现在的状态</h3>
+  <ul class="tl">
+    <li data-n="1"><b>生活这几块已经被接管</b>：钱、时间、读书、英语、情绪、素材、情报、健身，各自有人管，我不再靠记性。</li>
+    <li data-n="2"><b>跑起来的规模</b>：14 个 Agent、6 条业务流程流水线、本月 token 消耗已超 70 亿，且仍在增长。</li>
+    <li data-n="3"><b>下一步是把它变成能交付给别人的一套</b>：把「五步澄清 → 任务书 → 配置 → 验收 → 迭代」这套动作固定成模板，任何一个重复工作都能照着走一遍。</li>
+  </ul>
+</section>
+
+<div class="dnote" style="margin-top:20px">
+<b>边界</b>：以上是我<b>自己的</b>生活场景，不是企业客户交付——我没有真实客户上线记录。<br>
+<b>但可以确定的是</b>：企业客户的需求形态和我的抱怨是同一种——都是「说不清、没人满意、不知道做完没有」。把一句抱怨收敛成带验收标准的任务书，这个动作在两边是一样的。<br>
+<a class="more" href="agents.html">看 14 个 Agent 的完整清单与 8 步搭建法 →</a>
+</div>
+
+<a class="backlink" href="../index.html#work">← 回到全部作品</a>
+
+<div class="contact" style="margin-top:40px">
+  <div>
+    <h2>想聊聊？</h2>
+    <p>看岗位、发简历、或者只是想找个人聊聊 AI 怎么落进业务里，都欢迎找我。</p>
+    <div class="mail copy" id="mail">moyong06@foxmail.com</div>
+  </div>
+  <div class="acts">
+    <a class="btn" href="mailto:moyong06@foxmail.com">发邮件 →</a>
+    <a class="btn ghost" href="../index.html">回到首页</a>
+  </div>
+</div>
+<footer>
+  <span>莫咏 · 广州</span>
+  <span>本站由 Claude Code + Codex 协助搭建 · 截图均为真实运行中的系统</span>
+</footer>
+</div>
+<script>
+  const nav=document.querySelector('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+  const mail=document.getElementById('mail');
+  if(mail){ mail.style.cursor='pointer';
+    mail.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('moyong06@foxmail.com');mail.classList.add('done');setTimeout(()=>mail.classList.remove('done'),1600);}catch(e){}});
+  }
+</script>
+</body>
+</html>
