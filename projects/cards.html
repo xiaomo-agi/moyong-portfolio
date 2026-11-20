@@ -24,6 +24,21 @@
   <p class="lead">每日情报、打卡进度、账本结算、成就徽章——底层是散落在各处的数据。我写了一套<span class="nw">渲染层</span>把它们算成同一套<span class="nw">视觉语言</span>：一张卡，<span class="nw">一眼看完</span>。</p>
   <div class="dnums"><span><b>31</b> 个渲染器</span><span><b>9,472</b> 行 Python</span><span><b>7</b> 个维度</span><span><b>0</b> 人工填表</span></div>
 </div>
+<div class="dsec" style="margin-top:22px;margin-bottom:22px">
+  <h3>成品长这样</h3>
+  <div style="display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap">
+    <img src="../img/drop-card.png" alt="每日结算卡成品" style="width:300px;border:1px solid var(--line);border-radius:10px;background:#fff">
+    <div style="flex:1;min-width:260px">
+      <p style="margin-bottom:10px">右边这张是真的在跑的一张卡：当天投递 7 家 → 按口径算成 <b>21 EXP</b> → 累加到本维总账 → 换算等级和进度条 → 出图。<b>同一条链路</b>，换成别的数据源就出别的卡。</p>
+      <ul style="list-style:none">
+        <li style="position:relative;padding-left:17px;margin-bottom:8px;font-size:14.5px;color:var(--ink2)"><span style="position:absolute;left:2px;top:10px;width:5px;height:5px;border-radius:50%;background:var(--accent)"></span>口径写进代码，不写进脑子——所以不会随时间漂</li>
+        <li style="position:relative;padding-left:17px;margin-bottom:8px;font-size:14.5px;color:var(--ink2)"><span style="position:absolute;left:2px;top:10px;width:5px;height:5px;border-radius:50%;background:var(--accent)"></span>总账只追加不覆盖，每天的分都能回查</li>
+        <li style="position:relative;padding-left:17px;margin-bottom:8px;font-size:14.5px;color:var(--ink2)"><span style="position:absolute;left:2px;top:10px;width:5px;height:5px;border-radius:50%;background:var(--accent)"></span>出图是最后一步，前面每一步都可追溯</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <div class="dgrid">
   <div><div class="dsec" style="margin-bottom:14px"><h3>它解决什么</h3><p>数据是活的、散的，但每天要看的结论只有几张。中间那段「从数据到能看的东西」本来要一遍遍手工做，做多了就不做——一忙就断。</p></div>
 <div class="dsec" style="margin-bottom:14px"><h3>怎么跑起来的</h3><p>每个维度写一个渲染器：读数据源 → 按固定口径算分 → 套<span class="nw">同一套</span>模板出图。口径和底层表同源，改一处不用改两处。</p><ul>
