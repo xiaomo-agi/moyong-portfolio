@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>讲解视频与声音克隆 · 小 mo 作品集 · 小 mo 作品集</title>
+<meta name="description" content="用 Remotion 合成讲解视频，并用本地模型克隆我自己的声音配音。">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="brand" href="../index.html"><span class="avatar">小</span><span class="nm">小 mo</span></a>
+  <div class="nav-r">
+    <a href="../index.html#work">作品</a>
+    <a href="../index.html#how">方法</a>
+    <a href="../index.html#about">关于我</a>
+    <a href="../index.html#contact" class="btn">联系我 →</a>
+  </div>
+</nav>
+<div class="dhead">
+  <div class="crumb">项目 · 内容生产</div>
+  <h1>让 AI 用我的声音，把我的流程讲成视频</h1>
+  <p class="lead">做一套系统不难，难的是讲清楚。我的做法是写脚本 → 合成画面 → 用<span class="nw">本地克隆</span>的<span class="nw">自己的声音</span>配音，一条流程能讲成<span class="nw">可对外发</span>的视频。</p>
+  <div class="dnums"><span><b>3</b> 条成片</span><span><b>1</b> 套本地配音管线</span><span><b>1</b> 分钟内讲完</span><span><b>0</b> 外包</span></div>
+</div>
+<div class="dgrid">
+  <div><div class="dsec" style="margin-bottom:14px"><h3>它解决什么</h3><p>讲清楚一件事，视频比文档有效。但配音是最大的门槛：要么自己录（反复重录），要么用别人的声音（听着不对）。</p></div>
+<div class="dsec" style="margin-bottom:14px"><h3>怎么跑起来的</h3><p>用 Remotion 把脚本和画面绑成时间轴，音轨用本地跑的声音克隆模型合成我<span class="nw">自己的声音</span>，配音与画面一起进渲染队列。</p><ul>
+<li>脚本先写成逐句结构，句子直接对应时间轴</li>
+<li>本地克隆<span class="nw">自己的声音</span>，不依赖外部配音服务</li>
+<li>画面用真实界面截图，不用示意图占位</li>
+<li><span class="nw">同一套</span>模板出多版：横屏、竖屏、不同长度</li>
+<li>成片可直接对外发，不用二次剪辑</li></ul></div></div>
+  <div><div class="dsec">
+  <h3>我的做法</h3>
+  <ul><li>先写<span class="nw">逐句脚本</span>，再让画面去迁就脚本，不反过来</li><li>能用真实截图就不用占位图——可信度差很多</li><li>配音和画面合成一次跑完，避免反复对轴</li><li>模板复用，换内容不换管线</li></ul>
+</div>
+<div class="dsec" style="margin-bottom:14px"><h3>边界说明</h3><p>声音克隆用的是我<span class="nw">自己的声音</span>，公开这条视频前会先确认合成的音色对外是否合适。这套东西的价值在<b>「一个人也能出可对外的讲解视频」</b>。</p></div></div>
+</div>
+<a class="backlink" href="../index.html#work">← 回到全部作品</a>
+<div class="contact" style="margin-top:40px">
+  <div>
+    <h2>想聊聊？</h2>
+    <p>看岗位、发简历、或者只是想找个人聊聊 AI 怎么落进业务里，都欢迎找我。</p>
+    <div class="mail copy" id="mail">moyong06@foxmail.com</div>
+  </div>
+  <div class="acts">
+    <a class="btn" href="mailto:moyong06@foxmail.com">发邮件 →</a>
+    <a class="btn ghost" href="#" onclick="showWx();return false">微信二维码</a>
+    <a class="btn ghost" href="../index.html">回到首页</a>
+  </div>
+</div>
+<footer>
+  <span>小 mo · 广州</span>
+  <span>本站由 Claude Code + Codex 协助搭建 · 截图均为真实运行中的系统</span>
+</footer>
+</div>
+<script>
+  const nav=document.querySelector('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+  const mail=document.getElementById('mail');
+  if(mail){ mail.style.cursor='pointer';
+    mail.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('moyong06@foxmail.com');mail.classList.add('done');setTimeout(()=>mail.classList.remove('done'),1600);}catch(e){}});
+  }
+</script>
+<div id="wxpop" style="position:fixed;inset:0;background:rgba(20,30,24,.62);display:none;z-index:99;align-items:center;justify-content:center;padding:20px" onclick="if(event.target===this)this.style.display='none'">
+<div style="background:#f7f4ea;border:3px solid #1f3d2b;border-radius:14px;padding:14px;max-width:340px;width:100%;text-align:center">
+<div style="font-size:13px;font-weight:700;color:#1f3d2b;margin-bottom:8px">微信扫码联系小 mo</div>
+<img src="../img/wechat.png" style="width:100%;max-width:300px;aspect-ratio:1;object-fit:contain;border:1px solid #1f3d2b" alt="微信二维码">
+<div style="font-size:11px;color:#6b6b5a;margin-top:8px">点击空白处关闭</div>
+</div></div>
+<script>function showWx(){document.getElementById('wxpop').style.display='flex'}</script>
+</body>
+</html>

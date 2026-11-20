@@ -241,3 +241,6 @@
   .steps{grid-template-columns:1fr;gap:18px}
   .contact.slim{flex-direction:column;align-items:flex-start}
 }
+
+/* CJK 断行：专名与复合词用 .nw 整体不断行，其余按正常换行 */
+.nw{white-space:nowrap;word-break:normal}

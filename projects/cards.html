@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>自研卡片渲染引擎 · 小 mo 作品集 · 小 mo 作品集</title>
+<meta name="description" content="31 个 Python 渲染器，把每天散落的数据算成一张能直接看的卡片。">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="brand" href="../index.html"><span class="avatar">小</span><span class="nm">小 mo</span></a>
+  <div class="nav-r">
+    <a href="../index.html#work">作品</a>
+    <a href="../index.html#how">方法</a>
+    <a href="../index.html#about">关于我</a>
+    <a href="../index.html#contact" class="btn">联系我 →</a>
+  </div>
+</nav>
+<div class="dhead">
+  <div class="crumb">项目 · <span class="nw">渲染层</span></div>
+  <h1>把每天的数据，算成一张能直接看的卡片</h1>
+  <p class="lead">每日情报、打卡进度、账本结算、成就徽章——底层是散落在各处的数据。我写了一套<span class="nw">渲染层</span>把它们算成同一套<span class="nw">视觉语言</span>：一张卡，<span class="nw">一眼看完</span>。</p>
+  <div class="dnums"><span><b>31</b> 个渲染器</span><span><b>9,472</b> 行 Python</span><span><b>7</b> 个维度</span><span><b>0</b> 人工填表</span></div>
+</div>
+<div class="dgrid">
+  <div><div class="dsec" style="margin-bottom:14px"><h3>它解决什么</h3><p>数据是活的、散的，但每天要看的结论只有几张。中间那段「从数据到能看的东西」本来要一遍遍手工做，做多了就不做——一忙就断。</p></div>
+<div class="dsec" style="margin-bottom:14px"><h3>怎么跑起来的</h3><p>每个维度写一个渲染器：读数据源 → 按固定口径算分 → 套<span class="nw">同一套</span>模板出图。口径和底层表同源，改一处不用改两处。</p><ul>
+<li>七个维度各一个值守 Agent，每晚写自己那一列</li>
+<li>总账只追加不覆盖，每天的分都能回查</li>
+<li>等级走固定曲线，不手填、不装饰</li>
+<li>出卡是最后一步，前面每一步都可追溯</li>
+<li>一次出图，多处复用：手机端看、日卡汇总、复盘归档</li></ul></div></div>
+  <div><div class="dsec">
+  <h3>我的做法</h3>
+  <ul><li>先把「这条数据回答什么问题」定下来，再写渲染器</li><li>口径写进代码，不写进脑子——所以不会随时间漂</li><li>原始数据留档，只追加，出错能回溯到那天</li><li>一张卡只讲一件事，不塞满</li></ul>
+</div>
+<div class="dsec" style="margin-bottom:14px"><h3>边界说明</h3><p>这套<span class="nw">渲染层</span>跑的是我自己的数据，所以它的价值在<b>方法</b>而<span class="nw">不是</span>产品规模：把「数据 → 结论」这段做成可重复、可审计的一段程序，而<span class="nw">不是</span>每次<span class="nw">手工重做一遍</span>。</p></div></div>
+</div>
+<a class="backlink" href="../index.html#work">← 回到全部作品</a>
+<div class="contact" style="margin-top:40px">
+  <div>
+    <h2>想聊聊？</h2>
+    <p>看岗位、发简历、或者只是想找个人聊聊 AI 怎么落进业务里，都欢迎找我。</p>
+    <div class="mail copy" id="mail">moyong06@foxmail.com</div>
+  </div>
+  <div class="acts">
+    <a class="btn" href="mailto:moyong06@foxmail.com">发邮件 →</a>
+    <a class="btn ghost" href="#" onclick="showWx();return false">微信二维码</a>
+    <a class="btn ghost" href="../index.html">回到首页</a>
+  </div>
+</div>
+<footer>
+  <span>小 mo · 广州</span>
+  <span>本站由 Claude Code + Codex 协助搭建 · 截图均为真实运行中的系统</span>
+</footer>
+</div>
+<script>
+  const nav=document.querySelector('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+  const mail=document.getElementById('mail');
+  if(mail){ mail.style.cursor='pointer';
+    mail.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('moyong06@foxmail.com');mail.classList.add('done');setTimeout(()=>mail.classList.remove('done'),1600);}catch(e){}});
+  }
+</script>
+<div id="wxpop" style="position:fixed;inset:0;background:rgba(20,30,24,.62);display:none;z-index:99;align-items:center;justify-content:center;padding:20px" onclick="if(event.target===this)this.style.display='none'">
+<div style="background:#f7f4ea;border:3px solid #1f3d2b;border-radius:14px;padding:14px;max-width:340px;width:100%;text-align:center">
+<div style="font-size:13px;font-weight:700;color:#1f3d2b;margin-bottom:8px">微信扫码联系小 mo</div>
+<img src="../img/wechat.png" style="width:100%;max-width:300px;aspect-ratio:1;object-fit:contain;border:1px solid #1f3d2b" alt="微信二维码">
+<div style="font-size:11px;color:#6b6b5a;margin-top:8px">点击空白处关闭</div>
+</div></div>
+<script>function showWx(){document.getElementById('wxpop').style.display='flex'}</script>
+</body>
+</html>

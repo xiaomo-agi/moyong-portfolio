@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>情报与内容管线 · 小 mo 作品集 · 小 mo 作品集</title>
+<meta name="description" content="从社区热帖到行业动态，每日定时抓取、提炼成带出处的简报。">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="brand" href="../index.html"><span class="avatar">小</span><span class="nm">小 mo</span></a>
+  <div class="nav-r">
+    <a href="../index.html#work">作品</a>
+    <a href="../index.html#how">方法</a>
+    <a href="../index.html#about">关于我</a>
+    <a href="../index.html#contact" class="btn">联系我 →</a>
+  </div>
+</nav>
+<div class="dhead">
+  <div class="crumb">项目 · <span class="nw">情报管线</span></div>
+  <h1>该看的东西，每天自动出现在我手机上</h1>
+  <p class="lead">每天几十个信息源要扫。我把「扫一遍 → 判断值不值得看 → 变成一页能读的简报」做成<span class="nw">定时任务</span>，醒来打开就是结论，<span class="nw">不是</span>原始链接堆。</p>
+  <div class="dnums"><span><b>181</b> 条<span class="nw">定时任务</span></span><span><b>94</b> 条启用</span><span><b>4</b> 个数据源</span><span><b>1,799</b> 条/11月</span></div>
+</div>
+<div class="dgrid">
+  <div><div class="dsec" style="margin-bottom:14px"><h3>它解决什么</h3><p>信息源太多、时间太少。手动扫的结果是「扫到一半就被别的事打断」，然后干脆不扫了——于是每天都在信息不足的状态下做判断。</p></div>
+<div class="dsec" style="margin-bottom:14px"><h3>怎么跑起来的</h3><p>每个源一个抓取器 + 一个提炼器 + 一个推送口。抓到的原文先归档，再提炼成一页简报推到我手机上——<b>每条都带出处</b>，不信可以直接点回去看。</p><ul>
+<li>社区、技术站、行业动态、活动报名多路并行</li>
+<li>抓取留档，11 月社区源入库 <span class="nw">1,799 条</span></li>
+<li>提炼后推群，收到就能判断要不要展开</li>
+<li>公众号活动雷达：4 个数据源 + 预算闸门，每天 9 点推</li>
+<li>热榜助手：跨平台同词聚合，同话题置顶</li></ul></div></div>
+  <div><div class="dsec">
+  <h3>我的做法</h3>
+  <ul><li>先定「什么样的信息值得推给我」，再写抓取器</li><li>不推送原文，只推送<span class="nw">带出处的结论</span></li><li>抓取与提炼分开：抓取保证不漏，提炼保证不吵</li><li>失败的源单独记账，不静默跳过</li></ul>
+</div>
+<div class="dsec" style="margin-bottom:14px"><h3>边界说明</h3><p>这些源和简报是我自己在用。它的可迁移之处是那条链路：<b>定义值得推送的内容 → 定时抓取留档 → 提炼成<span class="nw">带出处的结论</span> → 推到能立刻行动的地方</b>。</p></div></div>
+</div>
+<a class="backlink" href="../index.html#work">← 回到全部作品</a>
+<div class="contact" style="margin-top:40px">
+  <div>
+    <h2>想聊聊？</h2>
+    <p>看岗位、发简历、或者只是想找个人聊聊 AI 怎么落进业务里，都欢迎找我。</p>
+    <div class="mail copy" id="mail">moyong06@foxmail.com</div>
+  </div>
+  <div class="acts">
+    <a class="btn" href="mailto:moyong06@foxmail.com">发邮件 →</a>
+    <a class="btn ghost" href="#" onclick="showWx();return false">微信二维码</a>
+    <a class="btn ghost" href="../index.html">回到首页</a>
+  </div>
+</div>
+<footer>
+  <span>小 mo · 广州</span>
+  <span>本站由 Claude Code + Codex 协助搭建 · 截图均为真实运行中的系统</span>
+</footer>
+</div>
+<script>
+  const nav=document.querySelector('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+  const mail=document.getElementById('mail');
+  if(mail){ mail.style.cursor='pointer';
+    mail.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('moyong06@foxmail.com');mail.classList.add('done');setTimeout(()=>mail.classList.remove('done'),1600);}catch(e){}});
+  }
+</script>
+<div id="wxpop" style="position:fixed;inset:0;background:rgba(20,30,24,.62);display:none;z-index:99;align-items:center;justify-content:center;padding:20px" onclick="if(event.target===this)this.style.display='none'">
+<div style="background:#f7f4ea;border:3px solid #1f3d2b;border-radius:14px;padding:14px;max-width:340px;width:100%;text-align:center">
+<div style="font-size:13px;font-weight:700;color:#1f3d2b;margin-bottom:8px">微信扫码联系小 mo</div>
+<img src="../img/wechat.png" style="width:100%;max-width:300px;aspect-ratio:1;object-fit:contain;border:1px solid #1f3d2b" alt="微信二维码">
+<div style="font-size:11px;color:#6b6b5a;margin-top:8px">点击空白处关闭</div>
+</div></div>
+<script>function showWx(){document.getElementById('wxpop').style.display='flex'}</script>
+</body>
+</html>

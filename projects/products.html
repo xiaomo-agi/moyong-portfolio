@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>上线的产品 · 小 mo 作品集 · 小 mo 作品集</title>
+<meta name="description" content="从零部署的个人站、幻灯片站、热榜站与社区站，全部可访问。">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="brand" href="../index.html"><span class="avatar">小</span><span class="nm">小 mo</span></a>
+  <div class="nav-r">
+    <a href="../index.html#work">作品</a>
+    <a href="../index.html#how">方法</a>
+    <a href="../index.html#about">关于我</a>
+    <a href="../index.html#contact" class="btn">联系我 →</a>
+  </div>
+</nav>
+<div class="dhead">
+  <div class="crumb">项目 · 产品</div>
+  <h1>不只是写完，是真的<span class="nw">部署上线</span></h1>
+  <p class="lead">作品集、幻灯片站、<span class="nw">热榜聚合</span>站、社区站与卡网——都是我从需求到部署自己走完的。每一条都写清它解决谁的什么问题。</p>
+  <div class="dnums"><span><b>6</b> 个已上线站点</span><span><b>3</b> 套部署环境</span><span><b>1</b> 个<span class="nw">自有域名</span></span><span><b>2</b> 小时热榜刷新</span></div>
+</div>
+<div class="dgrid">
+  <div><div class="dsec" style="margin-bottom:14px"><h3>它解决什么</h3><p>「做完」和「能用」之间隔着部署、域名、移动端适配。多数人的作品停在本地跑得起来，交付出去往往还得再走一轮。</p></div>
+<div class="dsec" style="margin-bottom:14px"><h3>怎么跑起来的</h3><p>每个站点我自己走完：需求 → 设计 → 前端 → 部署 → 域名 → <span class="nw">手机端自查</span> → 上线后回归。</p><ul>
+<li><b>个人站</b>（<span class="nw">自有域名</span>）：内容与服务入口，移动端优先</li>
+<li><b>幻灯片合集站</b>：对外分享的一套幻灯片，带联系入口</li>
+<li><b>热榜助手</b>：四平台<span class="nw">热榜聚合</span>，每 2 小时自动刷新重部署</li>
+<li><b>社区站 / 卡网 / 宣传站</b>：<span class="nw">3D</span> 场景与自助购买流程</li>
+<li><b><span class="nw">知识库问答</span>服务</b>：<span class="nw">OpenAI 兼容接口</span> + <span class="nw">引用溯源</span></li></ul></div></div>
+  <div><div class="dsec">
+  <h3>我的做法</h3>
+  <ul><li>上线前先在手机上自己走一遍，键盘和手指的差别很大</li><li>自己的域名不用第三方反代——少一跳就少一个会被掐的点</li><li><span class="nw">定时任务</span>直接管重部署，内容更新不用人管</li><li>每个站只解决一件事，入口清楚</li></ul>
+</div>
+<div class="dsec" style="margin-bottom:14px"><h3>边界说明</h3><p>这些站点是我自己做的，流量和收入规模都还小。我能证明的是<b>从需求到上线这条链我能自己走完</b>，以及部署环境的坑我踩过哪些。</p></div></div>
+</div>
+<a class="backlink" href="../index.html#work">← 回到全部作品</a>
+<div class="contact" style="margin-top:40px">
+  <div>
+    <h2>想聊聊？</h2>
+    <p>看岗位、发简历、或者只是想找个人聊聊 AI 怎么落进业务里，都欢迎找我。</p>
+    <div class="mail copy" id="mail">moyong06@foxmail.com</div>
+  </div>
+  <div class="acts">
+    <a class="btn" href="mailto:moyong06@foxmail.com">发邮件 →</a>
+    <a class="btn ghost" href="#" onclick="showWx();return false">微信二维码</a>
+    <a class="btn ghost" href="../index.html">回到首页</a>
+  </div>
+</div>
+<footer>
+  <span>小 mo · 广州</span>
+  <span>本站由 Claude Code + Codex 协助搭建 · 截图均为真实运行中的系统</span>
+</footer>
+</div>
+<script>
+  const nav=document.querySelector('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+  const mail=document.getElementById('mail');
+  if(mail){ mail.style.cursor='pointer';
+    mail.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('moyong06@foxmail.com');mail.classList.add('done');setTimeout(()=>mail.classList.remove('done'),1600);}catch(e){}});
+  }
+</script>
+<div id="wxpop" style="position:fixed;inset:0;background:rgba(20,30,24,.62);display:none;z-index:99;align-items:center;justify-content:center;padding:20px" onclick="if(event.target===this)this.style.display='none'">
+<div style="background:#f7f4ea;border:3px solid #1f3d2b;border-radius:14px;padding:14px;max-width:340px;width:100%;text-align:center">
+<div style="font-size:13px;font-weight:700;color:#1f3d2b;margin-bottom:8px">微信扫码联系小 mo</div>
+<img src="../img/wechat.png" style="width:100%;max-width:300px;aspect-ratio:1;object-fit:contain;border:1px solid #1f3d2b" alt="微信二维码">
+<div style="font-size:11px;color:#6b6b5a;margin-top:8px">点击空白处关闭</div>
+</div></div>
+<script>function showWx(){document.getElementById('wxpop').style.display='flex'}</script>
+</body>
+</html>
